@@ -1,0 +1,43 @@
+#admin {
+    background: #f1f5f8;
+}
+
+#admin .navbar {
+    background: #fff;
+    box-shadow: 1px 0 7px rgba(0, 0, 0, .05)
+}
+
+#admin .navbar-header {
+    height: 60px;
+}
+
+
+#mainlogo {
+    /* height: 4rem; */
+    height: inherit;
+}
+
+#mainlogo img {
+    height: 100%;
+}
+
+.table thead th {
+    border: 0;
+}
+
+.table thead {
+    background: #3ac47d;
+    color: #fff
+}
+
+.table tbody {
+    color: #444
+}
+
+.table .img-product img {
+    width: 30px;
+}
+
+#admin .card {
+    box-shadow: 0 0.46875rem 2.1875rem rgba(4,9,20,0.03), 0 0.9375rem 1.40625rem rgba(4,9,20,0.03), 0 0.25rem 0.53125rem rgba(4,9,20,0.05), 0 0.125rem 0.1875rem rgba(4,9,20,0.03);
+}

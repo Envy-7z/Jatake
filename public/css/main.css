@@ -1,0 +1,13 @@
+/* fonts */
+/* @import "https://fonts.googleapis.com/css?family=Nunito:200,400,700,900&display=swap"; */
+/* @import "https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800&display=swap"; */
+@import "../modules/fonts/Nunito/Nunito.min.css";
+@import "../modules/fonts/OpenSans/OpenSans.min.css";
+/* modules */
+@import "../modules/bootstrap-4.3.1/css/bootstrap.min.css";
+@import "../modules/bootstrap-4.3.1/css/bootstrap-reboot.min.css";
+@import "../modules/fontawesome/css/all.min.css";
+@import "../modules/slick/slick.css";
+
+/* styles */
+@import "./default.css";

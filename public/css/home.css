@@ -1,0 +1,93 @@
+#sc-banner .card {
+    min-height: 400px;
+    overflow: hidden;
+}
+
+#sc-banner .card-img-overlay {
+    color: #fff;
+    font-weight: 900;
+}
+
+#sc-banner .product-brand {
+    font-weight: 200;
+}
+
+#sc-banner .product-name,
+#sc-banner .banner-title,
+#sc-banner .buy-now {
+    font-weight: 800;
+}
+
+#sc-banner .product-price {
+    font-weight: 400;
+}
+
+#sc-banner .banner-title {
+    color: yellow;
+}
+
+#sc-banner .product-name {
+    text-transform: uppercase;
+}
+
+#sc-products {
+    padding: 2rem 0;
+}
+
+#sc-products h5 {
+    margin: 0;
+}
+
+#sc-testimoni {
+    padding: 2rem 0;
+}
+
+#sc-testimoni .card {
+    border: none;
+    border-radius: 01rem;
+    text-align: center;
+    margin: 0 6px;
+}
+
+#sc-testimoni .testimo-photo {
+    height: 152px;
+    width: 152px;
+    margin: auto;
+}
+
+#sc-testimoni .testimo-photo .photo-border {
+    border-radius: 50%;
+    overflow: hidden;
+    height: inherit;
+    width: inherit;
+}
+
+#sc-testimoni .testimo-photo .photo-border img {
+    height: inherit;
+}
+
+#sc-testimoni .testimo-name {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* RESPONSIVE STYLES */
+@media screen and (max-width: 62rem) {
+    #sc-banner .card-img {
+        height: 100%;
+        position: absolute;
+        width: unset;
+        margin-left: -350px;
+        max-width: unset;
+    }
+
+    #sc-banner .banner-title {
+        font-size: 1.75rem;
+    }
+
+    #sc-banner .product-name,
+    #sc-banner .product-price,
+    #sc-banner .buy-now {
+        font-size: 1.5rem;
+    }
+}
