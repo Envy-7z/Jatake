@@ -10,6 +10,7 @@
     "require": {
         "php": "^7.3|^8.0",
         "fideloper/proxy": "^4.4",
+        "flugger/laravel-responder": "^3.1",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.12",
@@ -49,6 +50,9 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
+        "build": [
+            "php artisan migrate:refresh && php artisan passport:install && php artisan db:seed"
+        ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"

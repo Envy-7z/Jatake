@@ -7,7 +7,7 @@ use App\ApiProducts as Products;
 use App\ApiAdmins as Admins;
 class AdminController extends Controller
 {
-    
+
     public function __construct()
     {
         $this->admin = new Admins();
