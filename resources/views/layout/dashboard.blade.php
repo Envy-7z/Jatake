@@ -43,9 +43,6 @@
                                 </div>
                                 <div class="d-inline-block">
                                     <a href="{{route('admin.logout')}}" class="btn btn-sm btn-danger"><i class="fas fa-sign-out-alt"></i>Logout</a>
-                                    {{-- <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                    </form> --}}
                                 </div>
                             </div>
                         </div>

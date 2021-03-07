@@ -10,7 +10,6 @@ class ApiAdmins extends Rest
     protected $uri = 'admin';
     public function loginAdmin($data)
     {
-        // dd($data);
         return $this->post('admin/login',$data);
     }
 }
