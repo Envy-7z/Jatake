@@ -58,7 +58,7 @@ Route::prefix('/admin')->name('admin.')->group(function()
 {
     Route::get('/','App\Http\Controllers\AdminController@index');
     Route::get('login','App\Http\Controllers\AdminController@login')->name('login');
-    Route::post('request_login','App\Http\Controllers\AdminController@request_login')->name('req_login');
+    Route::post('authenticate','App\Http\Controllers\AdminController@authenticate')->name('authenticate');
     Route::get('logout','App\Http\Controllers\AdminController@logout')->name('logout');
 
 
@@ -77,3 +77,5 @@ Route::prefix('/admin')->name('admin.')->group(function()
 });
 
 // Route::apiResource('/admin', 'AdminController');
+
+Route::get('/registeradmin','App\Http\Controllers\Auth\RegisterController@create');

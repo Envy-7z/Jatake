@@ -5,6 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\ApiProducts as Products;
 use App\ApiAdmins as Admins;
+use DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Redirect;
+
+
+
 class AdminController extends Controller
 {
 
@@ -26,7 +33,7 @@ class AdminController extends Controller
                 return redirect(route('admin.login'));
             }
             return $next($req);
-        })->except(['login','request_login']);
+        })->except(['login','authenticate']);
     }
 
     public function index()
@@ -47,20 +54,41 @@ class AdminController extends Controller
             'email'=>'email|required',
             'password'=>'required'
         ]);
-        $resp = $this->admin->loginAdmin($login);
-        if(!empty($resp->err) || empty($resp->token))
-        {
-            return response()->json($resp,403);
-        }
-        session()->put('admin_token',$resp->token);
-        unset($resp->token);
-        return response()->json(['data'=>$resp,],200);
+        // // dd($login);
+        // $resp = $this->admin->loginAdmin($login);
+        // if(!empty($resp->err) || empty($resp->token))
+        // {
+        //     return response()->json($resp,403);
+        // }
+        // session()->put('admin_token',$resp->token);
+        // unset($resp->token);
+        // return response()->json(['data'=>$resp,],200);
+    }
+
+    public function authenticate(Request $request)
+    {
+        $request->validate([
+            'email'=>'email|required',
+            'password'=>'required'
+        ]);
+        $user = DB::table('admins')
+        ->select('*')
+        ->where('email', $request->input('email'))
+        ->first();
+        if(Hash::check($request->input('password'), $user->password)){
+           session()->put('admin_token',$user->password);
+        //    return response()->json(['status' => 'success'], 200);
+           return \redirect('admin');
+       }else{
+        //    return response()->json(['status' => 'fail'],401)
+            return \redirect('admin/login');
+       }
     }
 
     public function logout()
     {
         session()->flush();
-        return redirect(route('admin.login'));
+        return \redirect()->route('admin.login');
     }
 
 }

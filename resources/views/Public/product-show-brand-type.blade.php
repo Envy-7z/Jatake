@@ -38,7 +38,7 @@
                 break;
                 @endphp
                 <a class="card brand-card mx-1 col-md-3 col-sm-4"
-                    href="{{ route('home.products.show',['products'=>$d->id]) }}/">
+                    href="{{ route('home.products.show',['product'=>$d->id]) }}/">
                     <div class="card-img">
                         <img src="{{ @$d->img[0] }}">
                     </div>

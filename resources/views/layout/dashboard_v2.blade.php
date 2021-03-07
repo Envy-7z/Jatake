@@ -222,7 +222,7 @@
                   </li>
                   <li class="divider"></li>
                   <li>
-                    <a href="login.html"><i class="material-icons">power_settings_new</i>&nbsp;&nbsp;Log Out</a>
+                    <a href="{{route('admin.logout')}}"><i class="material-icons">power_settings_new</i>&nbsp;&nbsp;Log Out</a>
                   </li>
                 </ul>
               </li>

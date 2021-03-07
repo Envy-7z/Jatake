@@ -21,7 +21,8 @@
                         <div class="col-md-10 mx-auto">
                             <small>Masuk ke halaman Admin dengan user dan password yang anda terima dari
                                 developer</small>
-                            <form action="#" class="form-cool mt-3" id="signin-form">
+                            <form class="form-cool mt-3" id="signin-form" method="POST" action="{{route("admin.authenticate")}}" >
+                                @csrf
                                 <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
@@ -63,7 +64,7 @@
         </div>
     </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
 <script type="text/javascript" defer>
     $(window).ready(()=>{
     $('#signin-form').validate({
@@ -80,15 +81,17 @@
             }
         },
         submitHandler: function(form) {
+            
             let data = $(form).serializeArray();
             data = objectifyForm(data);
+            console.log(data, 'data')
             $.post({
                 url: '{{ route("admin.req_login") }}',
                 dataType: 'json',
                 data: data
             })
             .done(res=>{
-                // console.log(res);
+                console.log(res, 'done');
                 window.location.href = '/admin'
             })
             .fail(err=>{
@@ -101,5 +104,5 @@
         }
     })
 })
-</script>
+</script> --}}
 @endsection
